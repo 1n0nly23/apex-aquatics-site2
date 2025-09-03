@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Aquatics - Pool & Spa Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(to bottom, #012b3a, #025c7a);
+            color: white;
+        }
+        header {
+            background: url('https://images.unsplash.com/photo-1579549615010-9c16921350a4?q=80&w=1935&auto=format&fit=crop');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5); /* dark overlay so text stands out */
+        }
+        header h1, header p, header button {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+        header button {
+            background: #00aaff;
+            border: none;
+            padding: 15px 30px;
+            margin-top: 20px;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        header button:hover {
+            background: #0088cc;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #services {
+            text-align: center;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .service {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+        #about p {
+            text-align: center;
+        }
+        /* New styles for the quote form */
+        #quote-form-container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        #quote-form-container input,
+        #quote-form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+        #quote-form-container input::placeholder,
+        #quote-form-container textarea::placeholder {
+            color: #ccc;
+        }
+        #quote-form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 800px; /* adjust depending on form length */
+            border: none;
+            border-radius: 10px;
+        }
+        footer {
+            background: #001f2b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>APEX AQUATICS</h1>
+    <p>Servicing Commercial, Residential & Rental Properties</p>
+    <button onclick="document.getElementById('quote').scrollIntoView({behavior: 'smooth'})">Request a Free Quote</button>
+</header>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>As a small, veteran-owned business, we are committed to providing exceptional service. Our attention to detail and unwavering values ensure every pool we touch is a testament to our dedication.</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Commercials</h3>
+            <p>We specialize in the professional cleaning and maintenance of commercial pools, ensuring they are pristine and safe for all users.</p>
+        </div>
+        <div class="service">
+            <h3>Residentials</h3>
+            <p>We provide dedicated cleaning and maintenance services for residential swimming pools, keeping your backyard oasis sparkling and safe for your family.</p>
+        </div>
+        <div class="service">
+            <h3>Rental Properties</h3>
+            <p>We offer specialized cleaning and maintenance services for rental properties, ensuring a quick and efficient turnover so your property is always ready for the next guest.</p>
+        </div>
+        <div class="service">
+            <h3>One Time Cleans</h3>
+            <p>We offer easy and thorough one-time cleaning services for a quick refresh or a special occasion.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="quote">
+    <h2>Request a Free Quote</h2>
+    <div id="quote-form-container">
+        <form id="quote-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone (Optional)</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="photos">Attach Photos (Optional)</label>
+            <input type="file" id="photos" name="photos" multiple accept="image/*">
+
+            <label for="message">Details about your pool</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+        <div id="form-message" class="form-message"></div>
+    </div>
+</section>
+
+<footer>
+    <p>Call us: 843-591-6583 | Servicing Pools & Spas</p>
+    <p>3100 Dick pond rd suite D Myrtle Beach SC 29588</p>
+    <p>&copy; 2025 Apex Aquatics. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('quote-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formMessage = document.getElementById('form-message');
+        formMessage.textContent = 'Thank you! Your quote request has been sent.';
+        formMessage.classList.add('success');
+        formMessage.style.display = 'block';
+
+        // Reset the form and hide the message after a short delay
+        setTimeout(() => {
+            this.reset();
+            formMessage.style.display = 'none';
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>
